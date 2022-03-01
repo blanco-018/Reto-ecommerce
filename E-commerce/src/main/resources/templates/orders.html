@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <div class="contenido">
+        <header>
+            <div th:replace="~{fragments/commonHeader.html :: body}"></div>
+            <h1>Carrito</h1>
+        </header>
+        <div id="contenidoLista" th:each="orderProduct : ${orderProducts}" th:object="${orderProduct}">
+            <div id="productosLista">
+                <div id="textoList">
+                    <span th:text="'Id de producto:' + *{productId}" class="nombre"></span>
+                    <b th:text="'(x' + *{quantity} + ' ud.)'"></b>
+                    <form th:action="@{'/removeOrder?id=' + *{id}}" method="post">
+                        <input type="submit" value="Remove from my order" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

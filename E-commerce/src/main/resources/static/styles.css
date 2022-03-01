@@ -1,0 +1,84 @@
+body {
+    background-color: rgb(166, 196, 204);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.contenido {
+    background-color: rgb(166, 196, 204);
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(146, 117, 74);
+    height: 200px;
+}
+
+header h1 {
+    padding-top: 25px;
+    color: rgb(0, 0, 0);
+    font-size: 43;
+}
+
+#contenedor1 {
+    text-align: center;
+    padding-top: 50px;
+    font-size: 19;
+}
+
+footer {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 19;
+}
+
+#contenidoLista {
+    padding-top: 15px;
+}
+
+#productosLista {
+    float: left;
+    width: 1000px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-bottom: 50px;
+    padding-right: 15px;
+    margin-left: 20px;
+}
+
+.links {
+    font-size: 20px;
+    text-align: center;
+    margin-right: 250px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.precios {
+    font-size: 20px;
+    margin-left: 355px;
+}
+
+#textoList {
+    padding-top: 100px;
+    padding-left: 150px;
+}
+
+.nombre {
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 347px;
+}
+
+.url {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.boton {
+    font-size: x-large;
+    height: 40px;
+    width: 400px;
+    margin-left: 180px;
+    border-radius: 25px;
+}
