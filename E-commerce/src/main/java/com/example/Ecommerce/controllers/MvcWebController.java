@@ -35,9 +35,9 @@ public class MvcWebController {
     @GetMapping("/myOrder")
     public ModelAndView OrderList() {
         ModelAndView modelAndView = new ModelAndView("orders");
-        if (orderActual == null) {
-            orderActual = webController.createOrder();
-        }
+        // if (orderActual == null) {
+        //     orderActual = webController.createOrder();
+        // }
         modelAndView.addObject("orderProducts", webController.getOrderProductByOrderId(orderActual.getID()));
         return modelAndView;
     }
@@ -55,7 +55,7 @@ public class MvcWebController {
     @RequestMapping(value = "/removeOrder", method = RequestMethod.POST)
     public String RemoveFromMyOrder(@Nullable int id) {
         webController.removeOrderProduct(id);
-        return "redirect:/home";
+        return "redirect:/myOrder";
     }
 
     @GetMapping("/whiseslist")

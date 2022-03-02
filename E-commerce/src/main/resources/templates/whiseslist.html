@@ -1,7 +1,7 @@
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://thymeleaf.org">
 
 <head>
-    <title>Home</title>
+    <title>Lista de Deseos</title>
     <link rel="stylesheet" href="/styles.css" />
 </head>
 
@@ -9,12 +9,11 @@
     <div class="contenido">
         <header>
             <div th:replace="~{fragments/commonHeader.html :: body}"></div>
-            <h1 style="color:#ffee00;">MERCADO BLANCO</h1>
+            <h1 style="color:#ffee00">Lista de Deseos</h1>
         </header>
-        <div id="contenidoLista" th:each="product : ${db}" th:object="${product}">
-            <div id="productosLista">
+        <div id="contenidoLista" th:each="product : ${whiseslist}" th:object="${product}">
+            <div id="productosLista3">
                 <div id="textoList">
-
                     <span th:text="*{name}" class="nombre"></span>
 
                     <br><br>
@@ -22,21 +21,21 @@
 
                     <br><br>
                     <button class="boton">
-                        <a th:href="*{img}" th:text="Imagen" class="url"></a> 
+                        <a th:href="*{img}" th:text="Enlace" class="url"></a>
                     </button>
 
                     <br><br>
+                    <form th:action="@{'/remove?id=' + *{id}}" method="post">
+                        <button class="boton">Eliminar de la Lista</button>
+                    </form>
+
                     <form th:action="@{'/addOrder?id=' + *{id}}" method="post">
                         <button class="boton" type="submit"> Añadir al carro</button>
-                        <!-- <input type="submit" value="Add to my Order" /> -->
                     </form>
 
-                    <form th:action="@{'/add?id=' + *{getID()}}" method="post">
-                        <button class="boton" type="submit">
-                            Añadir a la lista de deseos
-                        </button>
+                    <form th:action="@{ '/home'} ">
+                        <button class="boton" type="submit ">Seguir Comprando</button>
                     </form>
-
                 </div>
             </div>
         </div>
